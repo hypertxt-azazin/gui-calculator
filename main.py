@@ -2,6 +2,7 @@ import tkinter as tk
 
 calculation = ""
 
+
 def add_to_calculation(symbol):
     global calculation
     calculation += str(symbol)
@@ -23,10 +24,6 @@ def clear_field():
     calculation =""
     text_result.delete(1.0, "end")
     pass
-
-
-
-
 
 
 
@@ -66,3 +63,10 @@ btn_equals= tk.Button(root, text="=", command= evaluate_calculation, width=11,fo
 btn_equals.grid(row=6, column=3, columnspan=2)
 btn_clear= tk.Button(root, text="C", command= clear_field, width=11,font=("Arial", 14))
 btn_clear.grid(row=6, column=1, columnspan=2)
+
+root = tk.Tk()
+
+root.geometry("300x275")
+
+text_result = tk.Text(root, height=2, width=16, font=("Arial", 24))
+text_result.grid(columnspan=5)
